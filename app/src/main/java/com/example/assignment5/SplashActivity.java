@@ -11,7 +11,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 public class SplashActivity extends AppCompatActivity {
-    MediaPlayer hum;
+    MediaPlayer music;
     Timer timer;
     TimerTask task;
 
@@ -20,14 +20,14 @@ public class SplashActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
 
-        //hum = MediaPlayer.create(SplashActivity.this, R.raw.song);
-        //hum.start();
+        music = MediaPlayer.create(SplashActivity.this, R.raw.namenchakras);
+        music.start();
 
         task = new TimerTask() {
             @Override
             public void run() {
                 finish();
-                //hum.stop();
+                music.stop();
                 startActivity(new Intent(SplashActivity.this, ItemListActivity.class));
             }
         };
